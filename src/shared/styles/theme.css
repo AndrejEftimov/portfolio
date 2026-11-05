@@ -1,0 +1,77 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-size-min: 0.75rem;
+
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --color-mint: var(--mint);
+  --color-mint-strong: var(--mint-strong);
+}
+
+:root {
+  color-scheme: light;
+
+  --page: #f7fafd;
+  --surface: #fbfdff;
+  --surface-raised: #f2f7fb;
+  --border: #dce7ef;
+
+  --text: #172331;
+  --text-secondary: #536474;
+  --text-muted: #778796;
+
+  --primary: #2f6fa8;
+  --primary-strong: #173b67;
+  --mint: #6fb8aa;
+  --mint-strong: #237d72;
+
+  --topbar-bg: rgb(247 250 253 / 0.82);
+  --focus-ring: #22578f;
+
+  --button-primary-bg: #173b67;
+  --button-primary-bg-hover: #22578f;
+  --button-primary-text: #f7fbff;
+  --button-secondary-bg: #fbfdff;
+  --button-secondary-bg-hover: #f2f7fb;
+  --button-secondary-text: #35495b;
+  --button-secondary-border: #c8d7e3;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --page: #08111a;
+  --surface: #0d1721;
+  --surface-raised: #121f2b;
+  --border: #213140;
+
+  --text: #e7eef5;
+  --text-secondary: #aabac8;
+  --text-muted: #788b9a;
+
+  --primary: #7ea7d8;
+  --primary-strong: #a9c5e6;
+  --mint: #91cfc3;
+  --mint-strong: #b9e2da;
+
+  --topbar-bg: rgb(8 17 26 / 0.82);
+  --focus-ring: #9fc4ea;
+
+  --button-primary-bg: #22578f;
+  --button-primary-bg-hover: #2f6fa8;
+  --button-primary-text: #f7fbff;
+  --button-secondary-bg: #0d1721;
+  --button-secondary-bg-hover: #162635;
+  --button-secondary-text: #e7eef5;
+  --button-secondary-border: #385066;
+}

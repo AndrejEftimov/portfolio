@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "./theme.css";
+@import "./base.css";
+@import "./buttons.css";
+@import "./navigation.css";
+@import "./home.css";
+@import "./projects.css";
+@import "./content-pages.css";
+@import "./utilities.css";

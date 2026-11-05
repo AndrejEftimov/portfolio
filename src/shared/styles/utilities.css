@@ -1,0 +1,18 @@
+.section-label {
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.text-link {
+  width: fit-content;
+  margin-top: 1.5rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.text-link:hover {
+  color: var(--mint-strong);
+}
