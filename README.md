@@ -1,136 +1,61 @@
-# Portfolio Frontend
+# Andrej Eftimov — Software Engineer Portfolio
 
-Personal software-engineering portfolio for Andrej Eftimov, built with React, JavaScript, Vite, and Tailwind CSS v4.
+A personal software-engineering portfolio showcasing selected projects across full-stack web development, backend systems, Android, and .NET.
 
-## Current state
+The portfolio is built around practical software work, with an emphasis on maintainable architecture, thoughtful product decisions, clear user experiences, and continuous learning across different technology ecosystems.
 
-The application shell, theme system, homepage, projects listing, reusable project-detail system, More page, and Contact page are implemented. Real profile imagery is integrated, MyCircle/MTJ/CodeRev use curated project screenshots, and TwitterClone/Orbiter/Nefy use intentional technical-profile visuals until suitable screenshots exist.
+## Featured projects
 
-The final content, asset, responsive, accessibility, routing, and pre-deployment architecture passes are complete. Project routes keep independent scroll positions for the current browser tab, image metadata is validated, and GitHub Pages deployment is configured with clean client-side URLs.
+### MyCircle
+A full-stack application for staying organized and connected through tasks, events, invitations, RSVP workflows, and account features.
 
-## Stack
+**Technologies:** React, TypeScript, Node.js, PostgreSQL, Docker
 
-- React 19
+### Mood Tracker & Journal
+An Android application for mood tracking and journaling, with local and remote data storage, synchronization, and an ongoing feature-first architecture refactor.
+
+**Technologies:** Android, Java, Room, Supabase, Hilt
+
+### TwitterClone
+A university-built ASP.NET Core MVC social platform focused on relational data modeling, authentication, and the server-rendered .NET web stack.
+
+**Technologies:** C#, ASP.NET Core MVC, Entity Framework Core, SQL Server
+
+### CodeRev
+A code-review scheduling application with a Django backend and React frontend, designed around explicit domain rules, service-layer logic, and database-backed correctness guarantees.
+
+**Technologies:** Django, PostgreSQL, React, JavaScript, Vite, Tailwind CSS
+
+### Orbiter
+A personal command-center project exploring calendars, external integrations, development activity, and useful day-to-day signals.
+
+**Technologies:** Django, PostgreSQL, Tailwind CSS, JavaScript
+
+### Nefy
+An ASP.NET Core learning project centered on servers, sections, channels, messages, identity, and authorization.
+
+**Technologies:** C#, ASP.NET Core, PostgreSQL, Entity Framework Core
+
+## Portfolio stack
+
+The portfolio itself is built with:
+
+- React
 - JavaScript
 - Vite
-- Tailwind CSS v4
+- Tailwind CSS
 - React Router
-- Lucide React
 
-## Source structure
+It supports light and dark themes, responsive layouts, keyboard-friendly navigation, route-specific scroll restoration, and dedicated project pages with curated technical highlights and screenshots where available.
 
-```text
-src/
-├── contact/             # Contact page and contact constants
-├── home/                # Homepage sections and homepage constants
-├── layouts/             # Global application shell
-├── more/                # Personal / beyond-code page
-├── projects/            # Project catalog, detail pages, components, metadata
-└── shared/              # Reusable routing, theme, styles, utilities, constants
-```
+## About me
 
-Constants remain feature-owned where possible. Project tags, statuses, listing metadata, and detail content live under `projects/constants/`; app-wide identity/navigation values live under `shared/constants/`.
+I am a software engineer based in Skopje, North Macedonia, with a strong interest in backend development, full-stack systems, Android development, software architecture, and building practical products that are clear, maintainable, and useful.
 
-## Development
+Outside software, I enjoy playing the piano and composing music.
 
-Install dependencies:
+## Connect
 
-```bash
-npm install
-```
-
-Run locally:
-
-```bash
-npm run dev
-```
-
-Verify the source:
-
-```bash
-npm run lint
-npm run build
-```
-
-`npm run lint` runs ESLint plus the custom minimum-font-size and project-data checks.
-
-## Validation rules
-
-- Minimum UI font size: **12px / 0.75rem**.
-- Every project requires a valid shared status and at least one shared tag.
-- Every project requires detail-page content.
-- Real project images require descriptive alt text and explicit intrinsic width/height metadata.
-- External project links must use HTTPS.
-- `package-lock.json` must be committed before deployment. The Pages workflow verifies it before running `npm ci`.
-
-The project intentionally does not use a global state store, API client, form framework, or other application infrastructure that the current static portfolio does not need.
-
-## Assets
-
-Public images live under `public/images/` and are referenced through the shared `assetPath()` helper so Vite/GitHub Pages base paths remain compatible.
-
-Current real assets:
-
-- profile portrait;
-- MyCircle dashboard/tasks/events;
-- MTJ home/moods/journals/insights (with privacy-safe surname obscuration on the home screen);
-- CodeRev landing/public-slots/host dark/host light.
-
-Projects without suitable screenshots use a deliberate technical-profile visual rather than fake product screenshots.
-
-## Routing and scroll behavior
-
-The portfolio uses `BrowserRouter` with Vite's `BASE_URL` as its basename. Internal route links therefore remain correct for both root hosting and repository-style GitHub Pages hosting.
-
-Homepage section links are represented as React Router destinations (`pathname` + `hash`) rather than hardcoded root URLs. Route scroll positions are stored per pathname/search key in `sessionStorage`, so `/projects` and each `/projects/:slug` page keep independent positions for the lifetime of the browser tab. Hash navigation takes precedence when a destination explicitly targets a section.
-
-## GitHub Pages deployment
-
-The repository includes `.github/workflows/deploy-pages.yml`.
-
-The workflow:
-
-1. checks out the repository;
-2. verifies that the committed `package-lock.json` exists and matches `package.json` metadata;
-3. installs dependencies with `npm ci`;
-4. determines the Vite base path;
-5. runs the full validation suite;
-6. builds the application and creates `dist/404.html` for SPA deep-link fallback;
-7. deploys `dist/` through GitHub Pages Actions.
-
-In GitHub, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**.
-
-### Base-path behavior
-
-By default the workflow uses:
-
-- `/` for a `<username>.github.io` repository;
-- `/<repository>/` for a normal project repository.
-
-This matches Vite's expected GitHub Pages deployment model.
-
-For a future custom domain (or any deployment that should be served from `/` despite using a normal repository), create a GitHub Actions **repository variable** named:
-
-```text
-VITE_BASE_PATH
-```
-
-and set it to:
-
-```text
-/
-```
-
-The workflow treats this variable as an explicit override. Other non-root deployment paths may also be supplied; the build normalizes leading/trailing slashes.
-
-## Lockfile
-
-`package-lock.json` is intentionally part of the repository contract and must be committed. Do not add it to `.gitignore`.
-
-If it is missing locally, regenerate it from the project root with:
-
-```bash
-npm install
-```
-
-Then commit the resulting `package-lock.json` together with `package.json` dependency changes.
+- [GitHub](https://github.com/AndrejEftimov)
+- [LinkedIn](https://www.linkedin.com/in/andrej-eftimov-785229310/)
+- [Email](mailto:a.eftimov@yahoo.com)
