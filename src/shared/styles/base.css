@@ -75,13 +75,13 @@ a:focus-visible {
 
 .page-content {
   min-height: calc(100vh - 12rem);
-  padding-block: 5rem 6rem;
+  padding-block: 4rem 5rem;
 }
 
 .page-placeholder {
   display: grid;
   align-content: center;
-  min-height: 60vh;
+  min-height: 52vh;
   max-width: 760px;
 }
 
@@ -108,7 +108,7 @@ a:focus-visible {
   }
 
   .page-content {
-    padding-block: 6.5rem 8rem;
+    padding-block: 5rem 6.5rem;
   }
 }
 
