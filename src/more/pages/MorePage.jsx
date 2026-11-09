@@ -1,45 +1,61 @@
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router'
-import { MORE_PAGE, MUSIC_INTERESTS } from '../constants/interests.js'
+import { assetPath } from '../../shared/constants/assets.js'
+import InterestPanel from '../components/InterestPanel.jsx'
+import { BEYOND_INTERESTS, MORE_PAGE } from '../constants/interests.js'
 import { ROUTES } from '../../shared/routing/routes.js'
 
 function MorePage() {
   return (
-    <div className="content-page more-page">
-      <section className="content-page__hero">
-        <div className="section-label">{MORE_PAGE.eyebrow}</div>
-        <h1>{MORE_PAGE.title}</h1>
-        <p>{MORE_PAGE.intro}</p>
-      </section>
+    <div className="content-page beyond-page">
+      <section className="beyond-hero" aria-labelledby="beyond-page-title">
+        <div className="beyond-hero__copy">
+          <div className="section-label">{MORE_PAGE.eyebrow}</div>
+          <h1 id="beyond-page-title">{MORE_PAGE.title}</h1>
+          <p>{MORE_PAGE.intro}</p>
 
-      <section className="more-page__music" aria-labelledby="music-title">
-        <div className="content-page__section-heading">
-          <div className="section-label">MUSIC / OFF THE CLOCK</div>
-          <h2 id="music-title">The musical side.</h2>
-          <p>
-            Piano and composing are the two hobbies I most naturally come back to when I am not building software.
-          </p>
+          <div className="beyond-hero__topics" aria-label="Beyond code topics">
+            {BEYOND_INTERESTS.map((interest) => (
+              <span key={interest.id}>{interest.label}</span>
+            ))}
+          </div>
         </div>
 
-        <div className="more-page__interest-list">
-          {MUSIC_INTERESTS.map((interest, index) => (
-            <article className="more-page__interest" key={interest.id}>
-              <div className="more-page__interest-index">0{index + 1}</div>
-              <div>
-                <div className="section-label">{interest.eyebrow}</div>
-                <h3>{interest.title}</h3>
-                <p>{interest.description}</p>
-              </div>
-            </article>
+        <figure className="beyond-hero__visual">
+          <div className="beyond-hero__image-wrap">
+            <img
+              alt="Andrej Eftimov playing a grand piano"
+              className="beyond-hero__image"
+              decoding="async"
+              fetchPriority="high"
+              height="1600"
+              src={assetPath('images/beyond-code/andrej-piano.webp')}
+              width="1066"
+            />
+            <div className="beyond-hero__trace" aria-hidden="true" />
+          </div>
+          <figcaption>Piano / composition / music.</figcaption>
+        </figure>
+      </section>
+
+      <section className="beyond-interests" aria-label="Interests beyond software">
+        <div className="beyond-interests__intro">
+          <span className="section-label">EXPLORE / EXPAND</span>
+          <p>Three interests, kept compact until you want the longer version.</p>
+        </div>
+
+        <div className="beyond-interests__list">
+          {BEYOND_INTERESTS.map((interest) => (
+            <InterestPanel interest={interest} key={interest.id} />
           ))}
         </div>
       </section>
 
-      <section className="more-page__note" aria-labelledby="more-note-title">
+      <section className="beyond-cta" aria-labelledby="beyond-cta-title">
         <div>
-          <div className="section-label">BEYOND THE KEYBOARD</div>
-          <h2 id="more-note-title">A different kind of making.</h2>
-          <p>{MORE_PAGE.note}</p>
+          <span className="section-label">BACK TO THE PROFESSIONAL SIDE</span>
+          <h2 id="beyond-cta-title">Still here for the software.</h2>
+          <p>If the projects or anything here sparked a conversation, I am always happy to connect.</p>
         </div>
 
         <Link className="button button--secondary" to={ROUTES.contact}>

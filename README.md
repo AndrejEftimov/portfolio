@@ -52,7 +52,7 @@ It supports light and dark themes, responsive layouts, keyboard-friendly navigat
 
 I am a software engineer based in Skopje, North Macedonia, with a strong interest in backend development, full-stack systems, Android development, software architecture, and building practical products that are clear, maintainable, and useful.
 
-Outside software, I enjoy playing the piano and composing music.
+Outside software, I enjoy music and composition, travel, and exploring technology beyond programming.
 
 ## Connect
 

@@ -1,7 +1,5 @@
-import { ArrowDown } from 'lucide-react'
 import ProjectCatalogItem from '../components/ProjectCatalogItem.jsx'
-import { FEATURED_PROJECTS, OTHER_PROJECTS, PROJECTS } from '../constants/projects.js'
-import { handleSamePageAnchor } from '../../shared/utils/scroll.js'
+import { FEATURED_PROJECTS, OTHER_PROJECTS } from '../constants/projects.js'
 
 const FLAGSHIP_COUNT = 2
 
@@ -19,34 +17,10 @@ function ProjectsPage() {
 
         <div className="projects-page__intro">
           <p>
-            A curated look at the projects that best represent what I&apos;ve been building across full-stack, Android, .NET, Django, and backend-focused work.
+            A compact project index spanning full-stack, Android, .NET, Django, integrations, and backend-focused work. Start with the flagships, then scan the rest.
           </p>
-
-          <a
-            className="projects-page__jump"
-            href="#project-jump-list"
-            onClick={(event) => handleSamePageAnchor(event, '#project-jump-list')}
-          >
-            Jump to a project
-            <ArrowDown size={16} aria-hidden="true" />
-          </a>
         </div>
       </section>
-      <nav className="projects-page__project-jump" id="project-jump-list" aria-label="Jump to a project">
-        <span className="projects-page__project-jump-label">PROJECT INDEX</span>
-        <div className="projects-page__project-jump-items">
-          {PROJECTS.map((project, index) => (
-            <a
-              key={project.slug}
-              href={`#project-${project.slug}`}
-              onClick={(event) => handleSamePageAnchor(event, `#project-${project.slug}`)}
-            >
-              <span aria-hidden="true">{project.order ?? String(index + 1).padStart(2, '0')}</span>
-              {project.name}
-            </a>
-          ))}
-        </div>
-      </nav>
 
       <section className="projects-page__group" aria-labelledby="flagship-projects-title">
         <div className="projects-page__group-heading">
@@ -57,12 +31,7 @@ function ProjectsPage() {
 
         <div className="project-catalog project-catalog--flagship">
           {flagshipProjects.map((project, index) => (
-            <ProjectCatalogItem
-              key={project.slug}
-              project={project}
-              index={index}
-              flagship
-            />
+            <ProjectCatalogItem key={project.slug} project={project} index={index} flagship />
           ))}
         </div>
       </section>

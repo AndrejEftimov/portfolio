@@ -1,10 +1,8 @@
 import AboutSection from '../components/AboutSection.jsx'
 import ContactPreviewSection from '../components/ContactPreviewSection.jsx'
-import EducationSection from '../components/EducationSection.jsx'
 import FeaturedProjectsSection from '../components/FeaturedProjectsSection.jsx'
 import HeroSection from '../components/HeroSection.jsx'
-import ProjectStatusSection from '../components/ProjectStatusSection.jsx'
-import SkillsSection from '../components/SkillsSection.jsx'
+import HomeSnapshotSection from '../components/HomeSnapshotSection.jsx'
 
 function HomePage() {
   return (
@@ -12,9 +10,7 @@ function HomePage() {
       <HeroSection />
       <FeaturedProjectsSection />
       <AboutSection />
-      <ProjectStatusSection />
-      <SkillsSection />
-      <EducationSection />
+      <HomeSnapshotSection />
       <ContactPreviewSection />
     </>
   )

@@ -48,10 +48,10 @@ function ProjectPage() {
     <article className="page-shell project-detail">
       <ProjectDetailHero details={details} project={project} />
       <ProjectOverviewSection overview={details.overview} />
+      <ProjectGallerySection gallery={details.gallery} projectName={project.name} />
       <ProjectFeaturesSection features={details.features} />
       <ProjectArchitectureSection architecture={details.architecture} />
       <ProjectHighlightsSection highlights={details.highlights} />
-      <ProjectGallerySection gallery={details.gallery} projectName={project.name} />
       <ProjectStackSection technologies={project.technologies} />
       <ProjectDetailNavigation nextProject={nextProject} previousProject={previousProject} />
     </article>

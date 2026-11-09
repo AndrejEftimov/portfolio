@@ -64,7 +64,7 @@ function AboutSection() {
           </p>
         </div>
         <Link className="text-link about-beyond__link" to={ROUTES.more}>
-          More about me →
+          Beyond code →
         </Link>
       </div>
     </section>
